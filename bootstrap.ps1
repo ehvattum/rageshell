@@ -1,4 +1,10 @@
-#Requires -RunAsAdministrator
+param (
+    [string]$GitName = "Gitte Usersdottir",
+    [string]$GitEmail = "no-user@example.com"
+    )
+ 
+$ = Read-Host -Prompt 'Input your name'
+$GitEmail = Read-Host -Prompt 'Input your email address'#Requires -RunAsAdministrator
 Write-Host "Setting up your computer"
 #Change script excecution policy
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force;
@@ -23,8 +29,7 @@ Get-Content profile-template.ps1 >> $PROFILE
 
 #Copy a sane .gitconfig
 Copy-Item .gitconfig ~/.gitconfig
-$GitName = Read-Host -Prompt 'Input your name'
-$GitEmail = Read-Host -Prompt 'Input your email address'
+
 git config --global user.name  $GitName
 git config --global user.email  $GitEmail
 
