@@ -32,6 +32,8 @@ Copy-Item .gitconfig ~/.gitconfig
 
 git config --global user.name  $GitName
 git config --global user.email  $GitEmail
+git config --global core.editor "'$env:SystemDrive/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+git config --global core.sshCommand "$env:SystemDrive/WINDOWS/System32/OpenSSH/ssh.exe"
 
 #Set up the vscode settings sync extension. Use this to source your settings from previous installations
 code.cmd --install-extension Shan.code-settings-sync
