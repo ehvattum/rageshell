@@ -19,7 +19,7 @@ Install-Module posh-git
 Invoke-Expression "((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))";
 Set-Variable "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin";
 #Install applications
-chocolatey.exe install -y 7zip keepass kdiff3 conemu notepadplusplus visualstudiocode firefox dotnetcore-sdk -y;
+chocolatey.exe install -y 7zip keepass kdiff3 conemu notepadplusplus visualstudiocode firefox dotnetcore-sdk;
 chocolatey.exe install git.install --params "/GitAndUnixToolsOnPath /SChannel /WindowsTerminal /NoShellIntegration"
 chocolatey.exe install docker-for-windows --pre -y
 #Create the profile.ps1 if it does not exist
