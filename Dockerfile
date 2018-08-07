@@ -1,6 +1,6 @@
 FROM microsoft/nanoserver:latest as base
 WORKDIR /scratch
-COPY ["bootstrap.ps1","profile-template-ps1",".gitconfig","./"]
+COPY ["bootstrap.ps1","profile-template.ps1",".gitconfig","./"]
 
 FROM base as test
 RUN powershell.exe ./bootstrap.ps1
