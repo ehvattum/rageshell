@@ -15,3 +15,4 @@
         tool = kdiff3
 [core]
         editor = 'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+        sshCommand = C:/WINDOWS/System32/OpenSSH/ssh.exe

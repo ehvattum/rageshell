@@ -18,7 +18,7 @@ Write-Host "Install chocolatey"
 Invoke-Expression "((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))";
 Set-Variable "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin";
 Write-Host "Installing applications: 7zip keepass kdiff3 conemu notepadplusplus visualstudiocode firefox dotnetcore-sdk"
-chocolatey.exe install -y 7zip keepass kdiff3 conemu notepadplusplus visualstudiocode firefox dotnetcore-sdk -y;
+chocolatey.exe install -y 7zip keepass kdiff3 conemu notepadplusplus visualstudiocode firefox dotnetcore-sdk;
 Write-Host "Installing git"
 chocolatey.exe install git.install --params "/GitAndUnixToolsOnPath /SChannel /WindowsTerminal /NoShellIntegration"
 Write-Host "Installing docker-for-windows"
@@ -33,6 +33,8 @@ Copy-Item .gitconfig ~/.gitconfig
 
 git config --global user.name  $GitName
 git config --global user.email  $GitEmail
+git config --global core.editor "'$env:SystemDrive/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+git config --global core.sshCommand "$env:SystemDrive/WINDOWS/System32/OpenSSH/ssh.exe"
 
 Write-Host "Set up the vscode settings sync extension. Use this to source your settings from previous installations"
 code.cmd --install-extension Shan.code-settings-sync
